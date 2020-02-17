@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "libresistance.h"
 //include the rest of the header files for the functions we are creating 
 
 
