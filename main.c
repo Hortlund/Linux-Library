@@ -30,4 +30,12 @@ int main(int argc, char *argv[]){
 		scanf("%f", &array[i]);
 	}
 
-}
+	printf("%0.2f",calc_resistance(count, conn, array));
+	/*	
+	for(int i = 0; i < count; i++){
+                printf("%0.2f", array[i]);
+        }
+	*/
+
+
+}	
