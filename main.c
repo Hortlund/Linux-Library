@@ -7,17 +7,27 @@
 
 int main(int argc, char *argv[]){
 
+	//Variables for libresistance
+	int count;
+	float *array;
+	char conn;
+	
 
-	//printf("Ask for the stuffs");
-	//scanf("%d", &functionvariables);
-	//Do this for every parameter, then call the functions with the values inputed
-	//Ange spänningskälla i V: 50
-	//Ange koppling[S | P]: S
-	//Antal komponenter: 3
-	//Komponent 1 i ohm: 300
-	//Komponent 2 i ohm: 500
-	//Komponent 3 i ohm: 598
-	//
-	//Call the functions
+	//printf("Ange spänningskälla i V: ");
+	printf("Ange koppling[S | P]: ");
+	scanf("%c", &conn);
+	while(conn != 'S' && conn != 'P'){
+		getchar();
+		printf("Ange S eller P: ");
+		scanf("%c", &conn);
+	}
+        scanf("%c", &conn);
+	printf("Antal komponenter: ");
+	scanf("%d", &count);
+	array = (float *)malloc(sizeof(count));
+	for(int i = 0; i < count; i++){
+		printf("komponent %d i ohm: ", i + 1);
+		scanf("%f", &array[i]);
+	}
 
 }
