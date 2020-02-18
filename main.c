@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "libresistance.h"
 //include the rest of the header files for the functions we are creating 
 
@@ -11,6 +8,8 @@ int main(int argc, char *argv[]){
 	int count;
 	float *array;
 	char conn;
+
+	float resistance;
 	
 
 	//printf("Ange spänningskälla i V: ");
@@ -21,7 +20,6 @@ int main(int argc, char *argv[]){
 		printf("Ange S eller P: ");
 		scanf("%c", &conn);
 	}
-        scanf("%c", &conn);
 	printf("Antal komponenter: ");
 	scanf("%d", &count);
 	array = (float *)malloc(sizeof(count));
@@ -29,13 +27,9 @@ int main(int argc, char *argv[]){
 		printf("komponent %d i ohm: ", i + 1);
 		scanf("%f", &array[i]);
 	}
+	resistance = calc_resistance(count, conn, array);
+	printf("Ersättningsresistans: %0.f ohm\n", resistance);
+	free(array);
 
-	printf("%0.2f",calc_resistance(count, conn, array));
-	/*	
-	for(int i = 0; i < count; i++){
-                printf("%0.2f", array[i]);
-        }
-	*/
-
-
+	return 0;
 }	
