@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "libresistance.h"
 #include "libe_resistance.h"
 //include the rest of the header files for the functions we are creating 
@@ -13,10 +10,15 @@ int main(int argc, char *argv[]){
 	float *array;
 	char conn;
 
+<<<<<<< HEAD
 	//Variables for e_resistance
 	float array[3] = {1.0, 1.0, 1.0};
 	float *arraypek = array;
 	int raknare = 0;
+=======
+	float resistance;
+	
+>>>>>>> 89f95470478bef6e7a8e352080b836a00f460954
 
 	//printf("Ange spänningskälla i V: ");
 	printf("Ange koppling[S | P]: ");
@@ -26,7 +28,6 @@ int main(int argc, char *argv[]){
 		printf("Ange S eller P: ");
 		scanf("%c", &conn);
 	}
-        scanf("%c", &conn);
 	printf("Antal komponenter: ");
 	scanf("%d", &count);
 	array = (float *)malloc(sizeof(count));
@@ -34,7 +35,11 @@ int main(int argc, char *argv[]){
 		printf("komponent %d i ohm: ", i + 1);
 		scanf("%f", &array[i]);
 	}
+	resistance = calc_resistance(count, conn, array);
+	printf("Ersättningsresistans: %0.f ohm\n", resistance);
+	free(array);
 
+<<<<<<< HEAD
 	printf("%0.2f",calc_resistance(count, conn, array));
 	/*	
 	for(int i = 0; i < count; i++){
@@ -52,4 +57,7 @@ int main(int argc, char *argv[]){
 	raknare = 0;*/
 
 
+=======
+	return 0;
+>>>>>>> 89f95470478bef6e7a8e352080b836a00f460954
 }	
