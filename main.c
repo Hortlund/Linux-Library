@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "libresistance.h"
+#include "libe_resistance.h"
 //include the rest of the header files for the functions we are creating 
 
 
@@ -11,7 +12,11 @@ int main(int argc, char *argv[]){
 	int count;
 	float *array;
 	char conn;
-	
+
+	//Variables for e_resistance
+	float array[3] = {1.0, 1.0, 1.0};
+	float *arraypek = array;
+	int raknare = 0;
 
 	//printf("Ange spänningskälla i V: ");
 	printf("Ange koppling[S | P]: ");
@@ -36,6 +41,15 @@ int main(int argc, char *argv[]){
                 printf("%0.2f", array[i]);
         }
 	*/
+	
+	//Funktioncall and printouts of e_resistance.
+	/*int count = e_resistance(ERSATTNINGSRESISTANS, arraypek);
+	printf("Ersättningsresistanser i E12-serien kopplade i serie: ");
+	while(raknare<count){
+		printf("%.2f" ", ", array[i]);
+		ŕaknare++;
+	}
+	raknare = 0;*/
 
 
 }	
