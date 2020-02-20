@@ -10,15 +10,12 @@ int main(int argc, char *argv[]){
 	float *array;
 	char conn;
 
-//<<<<<<< HEAD
 	//Variables for e_resistance
 	float arrayE[3] = {1.0, 1.0, 1.0};
 	float *arraypek = arrayE;
 	int raknare = 0;
-//=======
+
 	float resistance;
-	
-//>>>>>>> 89f95470478bef6e7a8e352080b836a00f460954
 
 	//printf("Ange spänningskälla i V: ");
 	printf("Ange koppling[S | P]: ");
@@ -34,7 +31,6 @@ int main(int argc, char *argv[]){
 	printf("Ersättningsresistans: \n%.0f ohm\n", resistance);
 	free(array);
 
-//<<<<<<< HEAD
 	//printf("%0.2f",calc_resistance(count, conn, array));
 	/*	
 	for(int i = 0; i < count; i++){
@@ -52,8 +48,5 @@ int main(int argc, char *argv[]){
 	}
 	raknare = 0;
 
-
-//=======
 	return 0;
-//>>>>>>> 89f95470478bef6e7a8e352080b836a00f460954
 }	
