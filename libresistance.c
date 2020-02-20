@@ -7,15 +7,24 @@ float calc_resistance(int count, char conn, float *array){
 		for(int i = 0; i < count; i++){
 			sumOhm += array[i];
 		}
+		return sumOhm;
 	}
-	else{
+	else if(conn == 'P'){
 		for(int i = 0; i < count; i++){
 			tempOhm += (1 / array[i]);
 		}
 		divideOhm = 1 / tempOhm;
 		sumOhm = divideOhm;
+		return sumOhm;
 	}
-	return sumOhm;
-
+	if(!isdigit(count)){ 
+                return -1;
+        }
+        else if(!isalpha(conn)){
+                return -1;
+        }
+        else if(conn != 'S' && conn != 'P'){
+                return -1;
+        }
 
 }

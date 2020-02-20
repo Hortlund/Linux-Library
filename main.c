@@ -23,11 +23,6 @@ int main(int argc, char *argv[]){
 	//printf("Ange spänningskälla i V: ");
 	printf("Ange koppling[S | P]: ");
 	scanf(" %c", &conn);
-	/*while(conn != 'S' || conn != 'P'){
-		printf("Ange S eller P: ");
-		scanf("%c", &conn);
-		printf("%c\n", conn);
-	}*/
 	printf("Antal komponenter: ");
 	scanf("%d", &count);
 	array = (float *)malloc(sizeof(count));
