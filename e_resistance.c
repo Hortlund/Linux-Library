@@ -64,19 +64,3 @@ int e_resistance(float orig_resistance, float *res_array){
 	}
 return count;
 }
-
-int main() {
-	float array[3]={1.0, 1.0 , 1.0};
-	float *arraypek=array;
-	float resistance = 1398.0;
-	int i = 0;
-	int count = e_resistance(resistance, arraypek);	
-	
-	printf("Ersättningsresistanser i E12-serien kopplade i serie: ");
-	while(i<count){
-		printf("%.2f" ", ", array[i]);
-		i++;
-	}
-	
-return 0;
-}
