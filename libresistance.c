@@ -26,5 +26,5 @@ float calc_resistance(int count, char conn, float *array){
         else if(conn != 'S' && conn != 'P'){
                 return -1;
         }
-
+	return 0;
 }
