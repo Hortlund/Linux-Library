@@ -1,8 +1,9 @@
 
-all: lib
+all:lib 
 	mkdir -p ./lib
 	mv *.so ./lib
-	gcc -L./lib -Wl,-rpath=./lib -Wall -o test main.c -le_resistance -lresistance -lpower
+	gcc -L./lib -Wl,-rpath=./lib -Wall -o program main.c -le_resistance -lresistance -lpower
+
 lib:
 	gcc -c -Wall -Werror -fpic e_resistance.c libresistance.c libpower.c
 	gcc -shared -o libe_resistance.so e_resistance.o
@@ -13,10 +14,10 @@ clean:
 	rm -r lib
 
 install:
-	cp *.so /usr/local/lib
+	cp ./lib/*.so /usr/local/lib
 	cp program /usr/local/bin 
 
 
 uninstall:
-	rm program /usr/local/bin
-	rm *.so /usr/local/bin
+	rm /usr/local/bin/program
+	rm /usr/local/lib/libpower.so libresistance.so 
