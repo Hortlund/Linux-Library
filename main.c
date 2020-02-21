@@ -1,5 +1,5 @@
 #include "libresistance.h"
-#include "libe_resistance.h"
+#include "libcomponent.h"
 #include "libpower.h" 
 
 
