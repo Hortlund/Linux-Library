@@ -1,6 +1,6 @@
 #include "libresistance.h"
 #include "libe_resistance.h"
-//include the rest of the header files for the functions we are creating 
+#include "libpower.h" 
 
 
 int main(int argc, char *argv[]){
@@ -17,7 +17,12 @@ int main(int argc, char *argv[]){
 
 	float resistance;
 
-	//printf("Ange spänningskälla i V: ");
+	//Variables for libpower
+	int voltage;
+	float power;
+
+	printf("Ange spänningskälla i V: ");
+	scanf("%d", &voltage);
 	printf("Ange koppling[S | P]: ");
 	scanf(" %c", &conn);
 	printf("Antal komponenter: ");
@@ -28,7 +33,7 @@ int main(int argc, char *argv[]){
 		scanf("%f", &array[i]);
 	}
 	resistance = calc_resistance(count, conn, array);
-	printf("Ersättningsresistans: \n%.0f ohm\n", resistance);
+	printf("Ersättningsresistans: \n%.1f ohm\n", resistance);
 	free(array);
 
 	//printf("%0.2f",calc_resistance(count, conn, array));
@@ -38,6 +43,10 @@ int main(int argc, char *argv[]){
         }
 	*/
 	
+	//Functioncall and printouts for libpower.
+	power = calc_power_r(voltage, resistance);
+	printf("Effekt:\n%.2f W\n", power);
+
 	//Funktioncall and printouts of e_resistance.
 	
 	count = e_resistance(resistance, arraypek);
