@@ -15,7 +15,7 @@ clean:
 
 install:
 	cp ./lib/*.so /usr/local/lib
-	cp program /usr/local/bin 
+	cp program /usr/local/bin
 
 
 uninstall:
