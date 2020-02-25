@@ -1,5 +1,9 @@
 
-all:lib 
+all:
+	gcc -c -Wall -Werror -fpic libcomponent.c libresistance.c libpower.c
+	gcc -shared -o libcomponent.so libcomponent.o
+	gcc -shared -o libresistance.so libresistance.o
+	gcc -shared -o libpower.so libpower.o
 	mkdir -p ./lib
 	mv *.so ./lib
 	gcc -L./lib -Wl,-rpath=./lib -Wall -o program main.c -lcomponent -lresistance -lpower
@@ -21,7 +25,6 @@ install:
 	cp program /usr/local/bin
 	ldconfig
 	gcc -Wall -o program main.c -lcomponent -lresistance -lpower
-
 
 
 uninstall:
