@@ -17,14 +17,6 @@ float calc_resistance(int count, char conn, float *array){
 		sumOhm = divideOhm;
 		return sumOhm;
 	}
-	if(!isdigit(count)){ 
-                return -1;
-        }
-        else if(!isalpha(conn)){
-                return -1;
-        }
-        else if(conn != 'S' && conn != 'P'){
-                return -1;
-        }
-	return 0;
+	
+	return -1;
 }
